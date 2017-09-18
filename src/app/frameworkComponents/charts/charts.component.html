@@ -1,0 +1,77 @@
+<div class="{{chartID+'-body'}}">
+  <div class="chart-controls">
+    <div class="col-xs-4 pull-right">
+      <a href="#" (click)="ClearIteration('stop')" class="btn" data-toggle="tooltip" data-placement="bottom" title="Stop data series flow">
+        <i class="fa fa-stop" aria-hidden="true"></i>
+      </a>
+      <a (click)="triggerDownloadDatasets($event)" class="btn" data-toggle="tooltip" data-placement="bottom" title="Download CSV file">
+        <i class="fa fa-file-excel-o" aria-hidden="true"></i>
+      </a>
+      <a (click)="getBase64Image()" class="btn" data-toggle="tooltip" data-placement="bottom" title="Download an PNG image">
+        <i class="fa fa-download" aria-hidden="true"></i>
+      </a>
+      <a (click)="defaultZoom()" class="btn" data-toggle="tooltip" data-placement="bottom" title="Default zoom">
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </a>
+      <a (click)="fullScreen(chartID+'-body')" class="btn" data-toggle="tooltip" data-placement="bottom" title="Full screen">
+        <i class="fa fa-arrows-alt zoomingMode" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="col-xs-4">
+      <app-datetimepicker [classid]="chartID" (onDatePickerChange)="onDatePickerChanged($event)"></app-datetimepicker>
+    </div>
+    <div class="col-xs-4">
+      <div class='input-group'>
+        <select class="form-control" id="periode" [(ngModel)]="periode" (change)="onChangePeriode($event)">
+          <optgroup label="minutes">
+            <option id="periode_-1" class="" value="-1">1 minute</option>
+            <option id="periode_-5" class="" value="-5">5 minutes</option>
+            <option id="periode_-15" class="" value="-15">15 minutes</option>
+            <option id="periode_-30" class="" value="-30">30 minutes</option>
+          </optgroup>
+          <optgroup label="hours">
+            <option id="periode_-60" class="" value="-60">1 hour</option>
+            <option id="periode_-120" class="" value="-120">2 hours</option>
+            <option id="periode_-180" class="" value="-180">3 hours</option>
+            <option id="periode_-360" class="" value="-360">6 hours</option>
+            <option id="periode_-720" class="" value="-720">12 hours</option>
+          </optgroup>
+          <optgroup label="days">
+            <option id="periode_-1001" class="" value="-1001">today</option>
+            <option id="periode_-1101" class="" value="-1101">yesterday</option>
+            <option id="periode_1" class="" value="1">1 day</option>
+            <option id="periode_2" class="" value="2">2 days</option>
+          </optgroup>
+          <optgroup label="weeks">
+            <option id="periode_-1007" class="" value="-1007">current week</option>
+            <option id="periode_-1107" class="" value="-1107">last week</option>
+            <option id="periode_7" class="" value="7">1 week</option>
+            <option id="periode_14" class="" value="14">2 weeks</option>
+          </optgroup>
+          <optgroup label="months">
+            <option id="periode_-1031" class="" value="-1031">current month</option>
+            <option id="periode_-1131" class="" value="-1131">last month</option>
+            <option id="periode_31" class="" value="31">1 month</option>
+            <option id="periode_62" class="" value="62">2 months</option>
+            <option id="periode_93" class="" value="93">3 months</option>
+            <option id="periode_186" class="" value="186">6 months</option>
+            <option id="periode_372" class="" value="372">12 months</option>
+          </optgroup>
+          <optgroup label="years">
+            <option id="periode_-1372" class="" value="-1372">current year</option>
+            <option id="periode_-2372" class="" value="-2372">last year</option>
+          </optgroup>
+          <optgroup label="special">
+            <option id="periode_-1441" class="" value="-1441">until now</option>
+            <option id="periode_-1442" class="" value="-1442">end of data</option>
+          </optgroup>
+        </select>
+        <span class="input-group-addon">
+          <span class="fa fa-clock-o"></span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="chart-Container {{chartID+'-container'}}"></div>
+  <div class="clearfix"></div>
+</div>
