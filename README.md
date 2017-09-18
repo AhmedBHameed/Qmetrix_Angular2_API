@@ -7,7 +7,7 @@ An simple eligent interface for Qmetrix. using API
 1. Make a clone of this repository.
 Make a project clone into your machine using Git CLI
 ```JS
-git clone https://github.com/AhmedBHameed/Webpack_Template.git
+git clone https://github.com/AhmedBHameed/Qmetrix_Angular2_API.git
 ```
 2. you should make sure to install node.js in your system.
 3. open the the project direcotry and go to the "dist" folder.
@@ -25,4 +25,4 @@ node index.js
 
 ### License
 
-This project is licensed under the "Bremed Company" License.
+This project is licensed under the "Brimed Company" License.
