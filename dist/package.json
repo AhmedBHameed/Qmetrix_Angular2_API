@@ -1,7 +1,7 @@
 {
-  "name": "CMS-system",
+  "name": "Qmetrix IOT",
   "version": "1.0.0",
-  "license": "MIT",
+  "license": "Qmetrix",
   "main":"index.js",
   "engines": {
     "node": "6.10.2"
